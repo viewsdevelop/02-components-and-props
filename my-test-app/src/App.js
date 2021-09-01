@@ -1,28 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
 
-// App Component
-//  - Header
-//  - NavBar
-//  - CardsList
-//    - Card
+// Component Imports
+import Header from './components/Header';
+import NavBar from './components/NavBar';
+import CardList from './components/CardList';
 
-import Header from `./components/Header`;
-import NavBar from `./components/Navbar`;
-import CardsList from `./components/CardsList`;
-
-// Import CardData
-import cardData from './cardData';
+// Data
+import cards from './cards';
 
 function App() {
   return (
     <div className="App">
+      {/* NavBar Component */}
       <NavBar />
-      <Header />
-      <CardsList 
-        // We'll need to pass props here, more specifically
-        // an Array of Card objects
+      
+      {/* Header Component */}
+      <Header 
+        firstName="Louis" 
+        lastName="Medina" 
+        isLoggedIn
       />
+
+      {/* CardList Component */}
+      <CardList cards={cards} />
     </div>
   );
 }
